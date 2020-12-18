@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Orbitron', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #091921;
+}
+body::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient( #e91e63, #ffc107);
+    clip-path: circle(22% at 30% 20%);
+}
+body::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#e91e63, #ffc107);
+    clip-path: circle(20% at 70% 90%);
+}
+.container{
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    box-shadow: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    overflow: hidden;
+}
+.calculator{
+    transform-style: preserve-3d;
+    position: relative;
+    display: grid;
+    height: 100%;
+}
+.value{
+    grid-column: span 5;
+    height: 100px;
+    text-align: right;
+    padding: 10px;
+    width: 270px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border-bottom: .5px solid rgba(0, 0, 0, 0.2);
+    letter-spacing: 3px;
+}
+.num{
+    padding: 10px;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    border-bottom: .5px solid rgba(0, 0, 0, 0.2);
+    border-right: .5px solid rgba(0, 0, 0, 0.2);
+    user-select: none;
+}
+.num:hover{
+    background-color: rgba(255, 255, 255, 0.05);
+    z-index: 100;
+}
+.num:active{
+    background: #14ff47;
+    color: #192f00;
+    font-size: 15px;
+}
+.clear{
+    grid-column: span 2;
+}
+.plus{
+    grid-row: span 2;
+}
+.sqr{
+    letter-spacing: 3px;
+}
+.equal{
+    grid-column: span 2;
+}
+.del{
+    grid-column: span 2;
+}
+
+@media (max-width: 400px){
+    .container{
+        position: relative;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(25px);
+        box-shadow: rgba(0, 0, 0, 0.5);
+        z-index: 10;
+        overflow: hidden;
+    }
+    .calculator{
+        transform-style: preserve-3d;
+        position: relative;
+        display: grid;
+    }
+    .value{
+        grid-column: span 5;
+        height: 60px;
+        text-align: right;
+        padding: 10px;
+        width: 200px;
+        border: none;
+        outline: none;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        border-bottom: .5px solid rgba(0, 0, 0, 0.2);
+        letter-spacing: 3px;
+    }
+    .num{
+        padding: 10px;
+        text-align: center;
+        line-height: 45px;
+        cursor: pointer;
+        color: white;
+        font-weight: 500;
+        font-size: 14px;
+        border-bottom: .5px solid rgba(0, 0, 0, 0.2);
+        border-right: .5px solid rgba(0, 0, 0, 0.2);
+        user-select: none;
+    }
+    .num:hover{
+        background-color: rgba(255, 255, 255, 0.05);
+        z-index: 100;
+    }
+    .num:active{
+        background: #14ff47;
+        color: #192f00;
+        font-size: 15px;
+    }
+}
